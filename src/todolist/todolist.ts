@@ -13,7 +13,7 @@ export class Todolist {
 dataService = inject(Dataservice);
 
 myForm = new FormGroup(
-  {name: new FormControl}
+  {name: new FormControl, dueDate:new FormControl}
 )
 
 
@@ -23,8 +23,9 @@ changeDone(index:any){
 }
 
 submitAddToDoForm(){
-  let test = String(this.myForm.controls.name.value);
-  let newToDo = {name:test, done:false}
+  let name = String(this.myForm.controls.name.value);
+  let date = new Date(this.myForm.controls.dueDate.value).toDateString();
+  let newToDo = {name:name, done:false, dueDate:date}
   this.dataService.todos.push(newToDo);
   this.saveToLocalStorage();
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 interface todo {
-  name:string, done:boolean
+  name:string, dueDate:string, done:boolean
 }
 
 @Injectable({
@@ -9,7 +9,9 @@ interface todo {
 })
 export class Dataservice {
   
-  todos:Array<todo> = [];
+  todos:Array<todo> = [
+    {name:"Mow the lawn", dueDate:new Date().toDateString(), done:false}
+  ];
   jsonString:any = '';
 
   constructor(){

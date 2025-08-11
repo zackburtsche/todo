@@ -1,5 +1,5 @@
 .todotable{ 
-    tr td{
+    tr td, tr th{
         border: 1px solid gray;
         text-align: center;
         padding:2px
@@ -9,5 +9,8 @@
     }
     .notDoneRow{
         background-color: pink;
+    }
+    .tableHeader{
+        background-color: lightgray;
     }
 }
