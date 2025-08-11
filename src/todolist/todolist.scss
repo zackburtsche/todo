@@ -1,0 +1,13 @@
+.todotable{ 
+    tr td{
+        border: 1px solid gray;
+        text-align: center;
+        padding:2px
+    }
+    .doneRow{
+        background-color: lightgreen;
+    }
+    .notDoneRow{
+        background-color: pink;
+    }
+}

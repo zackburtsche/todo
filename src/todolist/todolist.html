@@ -1,0 +1,36 @@
+<h1 class="bd-title mb-0 p-3" id="content">ToDo List</h1>
+
+
+<table class="todotable w-50 ms-3">
+@for(row of dataService.todos; track $index){
+    <tr [ngClass]="row.done ? 'doneRow' : 'notDoneRow'">
+        <td>{{row.name}}</td>
+        <td>{{row.done}}</td>
+        <td>
+            <button [ngClass]="row.done ? 'btn btn-success':'btn btn-danger'" (click)="changeDone($index)">Set to {{row.done ? 'not done' : 'done'}}</button>
+
+
+        </td>
+        <td>
+            <button class="btn btn-warning" (click)="deleteToDo($index)">Delete</button>
+        </td>
+    </tr>
+}
+</table>
+
+
+
+    <h3 class="bd-title mb-0 pt-5 ps-3" id="content">Add New ToDo</h3>
+
+    <form [formGroup]="myForm" (ngSubmit)="submitAddToDoForm()">
+        <div class="form-group w-25 p-3">
+            <label for="addTodoName">ToDo Name</label>
+            <input class="form-control" type="text" formControlName="name" id="addTodoName">
+
+        </div>
+        <div class="form-group p-3">
+            <input type="submit">
+        </div>
+    </form>
+
+
