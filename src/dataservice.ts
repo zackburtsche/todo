@@ -14,7 +14,9 @@ export class Dataservice {
 
   constructor(){
     this.jsonString = localStorage.getItem("ZacksTodoArray");
-    this.todos = JSON.parse(this.jsonString);
+    if(this.jsonString){
+      this.todos = JSON.parse(this.jsonString);
+    }
   }
 
 }
